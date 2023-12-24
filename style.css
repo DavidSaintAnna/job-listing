@@ -253,9 +253,126 @@ main {
   border-radius: 2px;
   padding: 4px;
 }
+.hide {
+}
 .grid-row span:nth-child(5) {
   background-color: var(--Light-Grayish-Cyan);
   width: fit-content;
   border-radius: 2px;
   padding: 4px;
+}
+@media only screen and (min-width: 768px) {
+  header {
+    background-image: url(images/bg-header-desktop.svg);
+  }
+  .hide {
+    display: none;
+  }
+
+  .card {
+    min-width: 90%;
+    height: 130px;
+    padding: 0 80px;
+  }
+
+  .card-only-new {
+    min-width: 90%;
+    height: 130px;
+    padding: 0 80px;
+  }
+
+  .card-not-featured {
+    min-width: 90%;
+    height: 130px;
+    padding: 0 80px;
+  }
+
+  .grid-row {
+    position: absolute;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-top: -40px;
+    right: 20px;
+    column-gap: 5px;
+  }
+  .logo {
+    position: absolute;
+    width: 70px;
+    top: 240px;
+    left: 70px;
+    z-index: 1;
+  }
+
+  .second-logo {
+    position: absolute;
+    width: 70px;
+    top: 426px;
+    left: 70px;
+    z-index: 1;
+  }
+
+  .third-logo {
+    position: absolute;
+    width: 70px;
+    top: 605px;
+    left: 70px;
+    z-index: 1;
+  }
+
+  .fourth-logo {
+    position: absolute;
+    width: 70px;
+    top: 784px;
+    left: 70px;
+    z-index: 1;
+  }
+
+  .fifth-logo {
+    position: absolute;
+    width: 70px;
+    top: 963px;
+    left: 70px;
+    z-index: 1;
+  }
+
+  .sixth-logo {
+    position: absolute;
+    width: 70px;
+    top: 1142px;
+    left: 70px;
+    z-index: 1;
+  }
+
+  .seventh-logo {
+    position: absolute;
+    width: 70px;
+    top: 1321px;
+    left: 70px;
+    z-index: 1;
+  }
+
+  .eight-logo {
+    position: absolute;
+    width: 70px;
+    top: 1500px;
+    left: 70px;
+    z-index: 1;
+  }
+
+  .nineth-logo {
+    position: absolute;
+    width: 70px;
+    top: 1690px;
+    left: 70px;
+    z-index: 1;
+  }
+
+  .last-logo {
+    position: absolute;
+    width: 70px;
+    top: 1870px;
+    left: 70px;
+    z-index: 1;
+  }
 }
