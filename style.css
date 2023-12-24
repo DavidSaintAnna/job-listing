@@ -12,7 +12,7 @@
   --Light-Grayish-Cyan: hsl(180, 52%, 96%);
   --Light-Grayish-Cyan-tablets: hsl(180, 31%, 95%);
   --Dark-Grayish-Cyan: hsl(180, 8%, 52%);
-  --white: #fff;
+  --White: #fff;
   --Very-Dark-Grayish-Cyan: hsl(180, 14%, 20%);
 }
 
@@ -41,12 +41,86 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 52px;
 }
 
 .logo {
   position: absolute;
   width: 50px;
   top: 184px;
+  left: 45px;
+  z-index: 1;
+}
+
+.second-logo {
+  position: absolute;
+  width: 50px;
+  top: 436px;
+  left: 45px;
+  z-index: 1;
+}
+
+.third-logo {
+  position: absolute;
+  width: 50px;
+  top: 684px;
+  left: 45px;
+  z-index: 1;
+}
+
+.fourth-logo {
+  position: absolute;
+  width: 50px;
+  top: 937px;
+  left: 45px;
+  z-index: 1;
+}
+
+.fifth-logo {
+  position: absolute;
+  width: 50px;
+  top: 1188px;
+  left: 45px;
+  z-index: 1;
+}
+
+.sixth-logo {
+  position: absolute;
+  width: 50px;
+  top: 1442px;
+  left: 45px;
+  z-index: 1;
+}
+
+.seventh-logo {
+  position: absolute;
+  width: 50px;
+  top: 1695px;
+  left: 45px;
+  z-index: 1;
+}
+
+.eight-logo {
+  position: absolute;
+  width: 50px;
+  top: 1946px;
+  left: 45px;
+  z-index: 1;
+}
+
+.nineth-logo {
+  position: absolute;
+  width: 50px;
+  top: 2193px;
+  left: 45px;
+  z-index: 1;
+}
+
+.last-logo {
+  position: absolute;
+  width: 50px;
+  top: 2447px;
   left: 45px;
   z-index: 1;
 }
@@ -58,9 +132,34 @@ main {
   width: 327px;
   max-width: 327px;
   height: 200px;
-  background-color: var(--white);
+  background-color: var(--White);
   border-radius: 4px;
   border-left: 4px solid var(--Desaturated-Dark-Cyan);
+  box-shadow: 0px 15px 15px -4px hsla(180, 29%, 50%, 20%);
+}
+
+.card-only-new {
+  position: relative;
+  font-family: "League Spartan", sans-serif;
+  font-size: 15px;
+  width: 327px;
+  max-width: 327px;
+  height: 200px;
+  background-color: var(--White);
+  border-radius: 4px;
+  box-shadow: 0px 15px 15px -4px hsla(180, 29%, 50%, 20%);
+}
+
+.card-not-featured {
+  position: relative;
+  font-family: "League Spartan", sans-serif;
+  font-size: 15px;
+  width: 327px;
+  max-width: 327px;
+  height: 200px;
+  background-color: var(--White);
+  border-radius: 4px;
+  box-shadow: 0px 15px 15px -4px hsla(180, 29%, 50%, 20%);
 }
 
 .first-row {
@@ -75,7 +174,7 @@ main {
 
 .first-row span:nth-child(2) {
   margin-left: 28px;
-  color: var(--white);
+  color: var(--White);
   background-color: var(--Desaturated-Dark-Cyan);
   border-radius: 15px;
   font-size: 9px;
@@ -90,7 +189,7 @@ main {
   text-align: center;
   font-weight: 700;
   border-radius: 15px;
-  color: var(--white);
+  color: var(--White);
   background-color: var(--Very-Dark-Grayish-Cyan);
   padding: 4px;
 }
