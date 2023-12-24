@@ -59,7 +59,8 @@ main {
   max-width: 327px;
   height: 200px;
   background-color: var(--white);
-  border-radius: 10px;
+  border-radius: 4px;
+  border-left: 4px solid var(--Desaturated-Dark-Cyan);
 }
 
 .first-row {
