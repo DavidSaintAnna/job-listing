@@ -57,16 +57,105 @@ main {
   font-size: 15px;
   width: 327px;
   max-width: 327px;
-  height: 220px;
+  height: 200px;
   background-color: var(--white);
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  text-align: justify;
+}
+
+.first-row {
+  margin-top: 30px;
+  margin-left: 24px;
+}
+
+.blue-span {
+  color: var(--Desaturated-Dark-Cyan);
+  font-weight: 700;
+}
+
+.first-row span:nth-child(2) {
+  margin-left: 28px;
+  color: var(--white);
+  background-color: var(--Desaturated-Dark-Cyan);
+  border-radius: 15px;
+  font-size: 9px;
+  text-align: center;
+  font-weight: 700;
+  padding: 4px;
+}
+
+.first-row span:nth-child(3) {
+  margin-left: 8px;
+  font-size: 9px;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 15px;
+  color: var(--white);
+  background-color: var(--Very-Dark-Grayish-Cyan);
+  padding: 4px;
+}
+
+.second-row {
+  margin-top: 12px;
+  margin-left: 24px;
+}
+
+.third-row {
+  margin-top: 12px;
+  margin-left: 24px;
+  color: var(--Dark-Grayish-Cyan);
+}
+
+.bar {
+  margin-top: 12px;
+  width: 276px;
+  height: 1px;
+  margin-left: 24px;
+  background-color: var(--Dark-Grayish-Cyan);
 }
 
 .grid-row {
+  margin-top: 25px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  margin-left: 24px;
+  row-gap: 16px;
+  color: var(--Desaturated-Dark-Cyan);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.grid-row span:nth-child(5) {
+  margin-left: -35px;
+}
+
+.grid-row span:nth-child(1) {
+  background-color: var(--Light-Grayish-Cyan);
+  width: fit-content;
+  border-radius: 2px;
+  padding: 4px;
+}
+.grid-row span:nth-child(2) {
+  background-color: var(--Light-Grayish-Cyan);
+  width: fit-content;
+  border-radius: 2px;
+  padding: 4px;
+}
+.grid-row span:nth-child(3) {
+  background-color: var(--Light-Grayish-Cyan);
+  width: fit-content;
+  border-radius: 2px;
+  padding: 4px;
+}
+.grid-row span:nth-child(4) {
+  background-color: var(--Light-Grayish-Cyan);
+  width: fit-content;
+  border-radius: 2px;
+  padding: 4px;
+}
+.grid-row span:nth-child(5) {
+  background-color: var(--Light-Grayish-Cyan);
+  width: fit-content;
+  border-radius: 2px;
+  padding: 4px;
 }
