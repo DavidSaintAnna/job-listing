@@ -28,7 +28,7 @@ header {
   justify-content: center;
   height: 155px;
   background-color: var(--desaturated-dark-cyan);
-  background-image: url(images/bg-header-mobile.svg);
+  background-image: url(/images/bg-header-mobile.svg);
 }
 
 .modal {
@@ -108,7 +108,7 @@ main {
 }
 
 .modal span span {
-  background-image: url(images/icon-remove.svg);
+  background-image: url(/images/icon-remove.svg);
   background-size: 50% 50%;
   background-position: center;
   background-repeat: no-repeat;
@@ -237,7 +237,7 @@ main {
 }
 @media only screen and (min-width: 768px) {
   header {
-    background-image: url(images/bg-header-desktop.svg);
+    background-image: url(/images/bg-header-desktop.svg);
   }
   .hide {
     display: none;
