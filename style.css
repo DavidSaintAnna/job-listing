@@ -8,18 +8,18 @@
 
 :root {
   font-size: 62.5%;
-  --Desaturated-Dark-Cyan: hsl(180, 29%, 50%);
-  --Light-Grayish-Cyan: hsl(180, 52%, 96%);
-  --Light-Grayish-Cyan-tablets: hsl(180, 31%, 95%);
-  --Dark-Grayish-Cyan: hsl(180, 8%, 52%);
+  --desaturated-dark-cyan: hsl(180, 29%, 50%);
+  --light-grayish-cyan: hsl(180, 52%, 96%);
+  --light-grayish-cyan-tablets: hsl(180, 31%, 95%);
+  --dark-grayish-cyan: hsl(180, 8%, 52%);
   --White: #fff;
-  --Very-Dark-Grayish-Cyan: hsl(180, 14%, 20%);
+  --very-dark-grayish-cyan: hsl(180, 14%, 20%);
 }
 
 body {
   width: 100vw;
   height: 100vh;
-  background-color: var(--Light-Grayish-Cyan);
+  background-color: var(--light-grayish-cyan);
 }
 
 header {
@@ -27,19 +27,21 @@ header {
   display: flex;
   justify-content: center;
   height: 155px;
-  background-color: var(--Desaturated-Dark-Cyan);
+  background-color: var(--desaturated-dark-cyan);
   background-image: url(images/bg-header-mobile.svg);
 }
 
 .modal {
   display: none;
-  margin-top: -100px;
-  position: absolute;
+
   font-family: "League Spartan", sans-serif;
   width: 327px;
   max-width: 327px;
-  height: 110px;
-  left: 24px;
+  font-size: 15px;
+  padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+
   background-color: var(--White);
   box-shadow: 0px 15px 15px -4px hsla(180, 29%, 50%, 20%);
 }
@@ -72,7 +74,7 @@ main {
 }
 
 .card {
-  border-left: 4px solid var(--Desaturated-Dark-Cyan);
+  border-left: 4px solid var(--desaturated-dark-cyan);
 }
 
 .first-row {
@@ -81,14 +83,14 @@ main {
 }
 
 .blue-span {
-  color: var(--Desaturated-Dark-Cyan);
+  color: var(--desaturated-dark-cyan);
   font-weight: 700;
 }
 
 .first-row span:nth-child(2) {
   margin-left: 28px;
   color: var(--White);
-  background-color: var(--Desaturated-Dark-Cyan);
+  background-color: var(--desaturated-dark-cyan);
   border-radius: 15px;
   font-size: 9px;
   text-align: center;
@@ -97,11 +99,11 @@ main {
 }
 
 .modal span {
-  background-color: var(--Light-Grayish-Cyan);
+  background-color: var(--light-grayish-cyan);
   border-radius: 4px;
   padding: 6px;
   padding-right: 0px;
-  color: var(--Desaturated-Dark-Cyan);
+  color: var(--desaturated-dark-cyan);
   font-weight: 700;
 }
 
@@ -110,7 +112,7 @@ main {
   background-size: 50% 50%;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: var(--Desaturated-Dark-Cyan);
+  background-color: var(--desaturated-dark-cyan);
   padding: 6px 10px;
   margin-left: 0.7em;
   border-bottom-left-radius: 0;
@@ -125,9 +127,13 @@ main {
 
 .modal div div {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 10px;
+  justify-content: left;
   flex-wrap: wrap;
+}
+
+.modal div div span span {
+  cursor: pointer;
 }
 
 .modal > div {
@@ -136,8 +142,15 @@ main {
 }
 
 .modal div div:nth-of-type(2) {
-  color: var(--Dark-Grayish-Cyan);
+  color: var(--dark-grayish-cyan);
   font-weight: 700;
+  justify-content: right;
+  cursor: pointer;
+}
+
+.modal div div:nth-of-type(2):hover {
+  text-decoration: underline;
+  color: var(--desaturated-dark-cyan);
 }
 
 .first-row span:nth-child(3) {
@@ -147,7 +160,7 @@ main {
   font-weight: 700;
   border-radius: 15px;
   color: var(--White);
-  background-color: var(--Very-Dark-Grayish-Cyan);
+  background-color: var(--very-dark-grayish-cyan);
   padding: 4px;
 }
 
@@ -156,10 +169,14 @@ main {
   margin-left: 24px;
 }
 
+.second-row:hover {
+  color: var(--desaturated-dark-cyan);
+}
+
 .third-row {
   margin-top: 12px;
   margin-left: 24px;
-  color: var(--Dark-Grayish-Cyan);
+  color: var(--dark-grayish-cyan);
 }
 
 .bar {
@@ -167,7 +184,7 @@ main {
   width: 276px;
   height: 1px;
   margin-left: 24px;
-  background-color: var(--Dark-Grayish-Cyan);
+  background-color: var(--dark-grayish-cyan);
 }
 
 .grid-row {
@@ -175,7 +192,7 @@ main {
   display: grid;
   margin-left: 24px;
   row-gap: 16px;
-  color: var(--Desaturated-Dark-Cyan);
+  color: var(--desaturated-dark-cyan);
   grid-template-columns: 1fr 1fr 1fr;
   font-weight: 700;
   cursor: pointer;
@@ -186,25 +203,25 @@ main {
 }
 
 .grid-row span:nth-child(1) {
-  background-color: var(--Light-Grayish-Cyan);
+  background-color: var(--light-grayish-cyan);
   width: fit-content;
   border-radius: 2px;
   padding: 4px;
 }
 .grid-row span:nth-child(2) {
-  background-color: var(--Light-Grayish-Cyan);
+  background-color: var(--light-grayish-cyan);
   width: fit-content;
   border-radius: 2px;
   padding: 4px;
 }
 .grid-row span:nth-child(3) {
-  background-color: var(--Light-Grayish-Cyan);
+  background-color: var(--light-grayish-cyan);
   width: fit-content;
   border-radius: 2px;
   padding: 4px;
 }
 .grid-row span:nth-child(4) {
-  background-color: var(--Light-Grayish-Cyan);
+  background-color: var(--light-grayish-cyan);
   width: fit-content;
   border-radius: 2px;
   padding: 4px;
@@ -213,7 +230,7 @@ main {
 }
 
 .grid-row span:nth-child(5) {
-  background-color: var(--Light-Grayish-Cyan);
+  background-color: var(--light-grayish-cyan);
   width: fit-content;
   border-radius: 2px;
   padding: 4px;
@@ -231,6 +248,7 @@ main {
     grid-template-columns: 100px auto calc(50% - 50px);
     min-width: 90%;
     padding: 0;
+    padding-bottom: 0.8em;
   }
 
   .job > div:nth-of-type(5) {
@@ -240,10 +258,11 @@ main {
 
   .grid-row {
     width: fit-content;
-    margin-top: 0;
+    margin-top: 12px;
     margin-left: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding-right: 2em;
     grid-auto-flow: dense;
     grid-row: 2;
     grid-column: 3;
@@ -272,14 +291,20 @@ main {
     margin-top: 0;
   }
 
+  .first-row {
+    margin-top: 0;
+    align-self: center;
+    padding-top: 15px;
+  }
+  .second-row {
+    margin-top: 0;
+    align-self: center;
+  }
+
   .modal {
-    margin-top: -100px;
-    position: absolute;
     display: none;
     font-family: "League Spartan", sans-serif;
     min-width: 90%;
-    height: 110px;
-    left: 70px;
     background-color: var(--White);
     box-shadow: 0px 15px 15px -4px hsla(180, 29%, 50%, 20%);
   }
