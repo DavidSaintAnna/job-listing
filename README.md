@@ -38,7 +38,7 @@ Deploy do front-end efetuado no [Netlify](https://www.netlify.com/) para visuali
 
 <div align="center">
 
-Aplicação frontEnd responsiva com minha versão do desafio do frontEndMentor com renderização e consumos de uma api.json criando COMPONENTES PARA OS CARDS, utlizei JS VANILLA para todo o processo. O DESAFIO É CONSIDERADO DE NIVEL INTERMEDIÁRIO https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt
+Aplicação frontEnd responsiva com minha versão do desafio do frontEndMentor com renderização e consumos de uma api.json criando COMPONENTES PARA OS CARDS e filtrando os cards dipostos na tela utlizando Js de acordo com o disparo dos eventos, utlizei JS VANILLA para todo o processo. O DESAFIO É CONSIDERADO DE NIVEL INTERMEDIÁRIO https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt
 
 ---
 
