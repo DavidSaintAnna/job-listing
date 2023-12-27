@@ -59,125 +59,24 @@ main {
   gap: 52px;
 }
 
-.logo {
-  position: absolute;
-  width: 50px;
-  top: 184px;
-  left: 45px;
-  z-index: 1;
-}
-
-.second-logo {
-  position: absolute;
-  width: 50px;
-  top: 436px;
-  left: 45px;
-  z-index: 1;
-}
-
-.third-logo {
-  position: absolute;
-  width: 50px;
-  top: 684px;
-  left: 45px;
-  z-index: 1;
-}
-
-.fourth-logo {
-  position: absolute;
-  width: 50px;
-  top: 937px;
-  left: 45px;
-  z-index: 1;
-}
-
-.fifth-logo {
-  position: absolute;
-  width: 50px;
-  top: 1188px;
-  left: 45px;
-  z-index: 1;
-}
-
-.sixth-logo {
-  position: absolute;
-  width: 50px;
-  top: 1442px;
-  left: 45px;
-  z-index: 1;
-}
-
-.seventh-logo {
-  position: absolute;
-  width: 50px;
-  top: 1695px;
-  left: 45px;
-  z-index: 1;
-}
-
-.eight-logo {
-  position: absolute;
-  width: 50px;
-  top: 1946px;
-  left: 45px;
-  z-index: 1;
-}
-
-.nineth-logo {
-  position: absolute;
-  width: 50px;
-  top: 2193px;
-  left: 45px;
-  z-index: 1;
-}
-
-.last-logo {
-  position: absolute;
-  width: 50px;
-  top: 2447px;
-  left: 45px;
-  z-index: 1;
+.job {
+  position: relative;
+  font-family: "League Spartan", sans-serif;
+  font-size: 15px;
+  width: 327px;
+  max-width: 327px;
+  background-color: var(--White);
+  border-radius: 4px;
+  box-shadow: 0px 15px 15px -4px hsla(180, 29%, 50%, 20%);
+  padding-bottom: 1.5em;
 }
 
 .card {
-  position: relative;
-  font-family: "League Spartan", sans-serif;
-  font-size: 15px;
-  width: 327px;
-  max-width: 327px;
-  height: 200px;
-  background-color: var(--White);
-  border-radius: 4px;
   border-left: 4px solid var(--Desaturated-Dark-Cyan);
-  box-shadow: 0px 15px 15px -4px hsla(180, 29%, 50%, 20%);
-}
-
-.card-only-new {
-  position: relative;
-  font-family: "League Spartan", sans-serif;
-  font-size: 15px;
-  width: 327px;
-  max-width: 327px;
-  height: 200px;
-  background-color: var(--White);
-  border-radius: 4px;
-  box-shadow: 0px 15px 15px -4px hsla(180, 29%, 50%, 20%);
-}
-
-.card-not-featured {
-  position: relative;
-  font-family: "League Spartan", sans-serif;
-  font-size: 15px;
-  width: 327px;
-  max-width: 327px;
-  height: 200px;
-  background-color: var(--White);
-  border-radius: 4px;
-  box-shadow: 0px 15px 15px -4px hsla(180, 29%, 50%, 20%);
 }
 
 .first-row {
-  margin-top: 30px;
+  margin-top: 10px;
   margin-left: 24px;
 }
 
@@ -195,6 +94,50 @@ main {
   text-align: center;
   font-weight: 700;
   padding: 4px;
+}
+
+.modal span {
+  background-color: var(--Light-Grayish-Cyan);
+  border-radius: 4px;
+  padding: 6px;
+  padding-right: 0px;
+  color: var(--Desaturated-Dark-Cyan);
+  font-weight: 700;
+}
+
+.modal span span {
+  background-image: url(images/icon-remove.svg);
+  background-size: 50% 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--Desaturated-Dark-Cyan);
+  padding: 6px 10px;
+  margin-left: 0.7em;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.job img {
+  width: 50px;
+  margin-top: -25px;
+  margin-left: 20px;
+}
+
+.modal div div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal > div {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.modal div div:nth-of-type(2) {
+  color: var(--Dark-Grayish-Cyan);
+  font-weight: 700;
 }
 
 .first-row span:nth-child(3) {
@@ -234,7 +177,6 @@ main {
   row-gap: 16px;
   color: var(--Desaturated-Dark-Cyan);
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
   font-weight: 700;
   cursor: pointer;
 }
@@ -284,112 +226,52 @@ main {
     display: none;
   }
 
-  .card {
+  .job {
+    display: grid;
+    grid-template-columns: 100px auto calc(50% - 50px);
     min-width: 90%;
-    height: 130px;
-    padding: 0 80px;
+    padding: 0;
   }
 
-  .card-only-new {
-    min-width: 90%;
-    height: 130px;
-    padding: 0 80px;
-  }
-
-  .card-not-featured {
-    min-width: 90%;
-    height: 130px;
-    padding: 0 80px;
+  .job > div:nth-of-type(5) {
+    grid-row: 1;
+    grid-column: 3;
   }
 
   .grid-row {
-    position: absolute;
     width: fit-content;
+    margin-top: 0;
+    margin-left: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    margin-top: -40px;
-    right: 20px;
+    grid-auto-flow: dense;
+    grid-row: 2;
+    grid-column: 3;
     column-gap: 5px;
-  }
-  .logo {
-    position: absolute;
-    width: 70px;
-    top: 240px;
-    left: 70px;
-    z-index: 1;
+    vertical-align: middle;
   }
 
-  .second-logo {
-    position: absolute;
-    width: 70px;
-    top: 426px;
-    left: 70px;
-    z-index: 1;
+  .job > div:nth-of-type(7) {
+    grid-row: 3;
+    grid-column: 3;
   }
 
-  .third-logo {
-    position: absolute;
-    width: 70px;
-    top: 605px;
-    left: 70px;
-    z-index: 1;
+  .grid-row div {
+    vertical-align: middle;
   }
 
-  .fourth-logo {
-    position: absolute;
-    width: 70px;
-    top: 784px;
-    left: 70px;
-    z-index: 1;
+  .grid-row span:nth-child(5) {
+    margin-left: 0;
   }
 
-  .fifth-logo {
-    position: absolute;
-    width: 70px;
-    top: 963px;
-    left: 70px;
-    z-index: 1;
+  .job img {
+    grid-row: 1 / 4;
+    padding: 15px;
+    width: 100px;
+    margin-left: 0;
+    margin-top: 0;
   }
 
-  .sixth-logo {
-    position: absolute;
-    width: 70px;
-    top: 1142px;
-    left: 70px;
-    z-index: 1;
-  }
-
-  .seventh-logo {
-    position: absolute;
-    width: 70px;
-    top: 1321px;
-    left: 70px;
-    z-index: 1;
-  }
-
-  .eight-logo {
-    position: absolute;
-    width: 70px;
-    top: 1500px;
-    left: 70px;
-    z-index: 1;
-  }
-
-  .nineth-logo {
-    position: absolute;
-    width: 70px;
-    top: 1690px;
-    left: 70px;
-    z-index: 1;
-  }
-
-  .last-logo {
-    position: absolute;
-    width: 70px;
-    top: 1870px;
-    left: 70px;
-    z-index: 1;
-  }
   .modal {
     margin-top: -100px;
     position: absolute;
