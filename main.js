@@ -15,7 +15,7 @@ const filterItems = () => {
     }
     filteredElements[j].setAttribute(
       "style",
-      display ? "display:block" : "display:none"
+      display ? "display:grid" : "display:none"
     );
   }
 };
@@ -39,6 +39,18 @@ const triggerModal = (event) => {
     filterItems();
   });
 };
+
+modal.firstElementChild.children[1].addEventListener("click", () => {
+  if (arrayOfTags.length === 0) {
+    return;
+  }
+  arrayOfTags.splice(0, arrayOfTags.length);
+  const tags = modal.firstElementChild.firstElementChild;
+  while (tags.firstChild) {
+    tags.removeChild(tags.firstChild);
+  }
+  filterItems();
+});
 
 fetch("./data.json")
   .then((response) => response.json())
@@ -85,9 +97,9 @@ fetch("./data.json")
       };
 
       contractData(item.postedAt);
-      thirdRow.appendChild(document.createTextNode("\u2022"));
+      thirdRow.appendChild(document.createTextNode(" \u2022 "));
       contractData(item.contract);
-      thirdRow.appendChild(document.createTextNode("\u2022"));
+      thirdRow.appendChild(document.createTextNode(" \u2022 "));
       contractData(item.location);
 
       const createTag = (innerText) => {
@@ -95,6 +107,7 @@ fetch("./data.json")
         const tag = document.createElement("span");
         div.appendChild(tag);
         tag.innerText = innerText;
+        cardDiv.classList.add(`filter-${innerText}`);
         tag.addEventListener("click", triggerModal);
         gridRow.appendChild(div);
       };
@@ -114,20 +127,8 @@ fetch("./data.json")
       createTag(item.role);
       createTag(item.level);
 
-      for (
-        let i = 0;
-        i < Math.max(item.languages.length, item.tools.length);
-        i++
-      ) {
-        if (item.languages[i]) {
-          cardDiv.classList.add(`filter-${item.languages[i]}`);
-          createTag(item.languages[i]);
-        }
-        if (item.tools[i]) {
-          cardDiv.classList.add(`filter-${item.tools[i]}`);
-          createTag(item.tools[i]);
-        }
-      }
+      item.languages.forEach(createTag);
+      item.tools.forEach(createTag);
 
       cardDiv.appendChild(logo);
       cardDiv.appendChild(firstRow);
