@@ -1,8 +1,43 @@
-const $cards = document.querySelector(".cards");
-const $modal = document.querySelector(".modal");
+const cards = document.querySelector(".cards");
+const modal = document.querySelector(".modal");
+const arrayOfTags = [];
+
+const filterItems = () => {
+  const filteredElements = document.getElementsByClassName("job");
+
+  for (let j = 0; j < filteredElements.length; j++) {
+    let display = true;
+    for (const tag of arrayOfTags) {
+      if (!filteredElements[j].classList.contains("filter-" + tag)) {
+        display = false;
+        break;
+      }
+    }
+    filteredElements[j].setAttribute(
+      "style",
+      display ? "display:block" : "display:none"
+    );
+  }
+};
 
 const triggerModal = (event) => {
-  $modal.setAttribute("style", "display:block");
+  modal.setAttribute("style", "display:block");
+  if (arrayOfTags.includes(event.target.innerText)) {
+    return;
+  }
+  const span = document.createElement("span");
+  const removeSpan = document.createElement("span");
+  span.innerText = event.target.innerText;
+  arrayOfTags.push(event.target.innerText);
+
+  span.appendChild(removeSpan);
+  modal.firstElementChild.firstElementChild.appendChild(span);
+  filterItems();
+  removeSpan.addEventListener("click", () => {
+    modal.firstElementChild.firstElementChild.removeChild(span);
+    arrayOfTags.splice(arrayOfTags.indexOf(span.innerText), 1);
+    filterItems();
+  });
 };
 
 fetch("./data.json")
@@ -10,12 +45,16 @@ fetch("./data.json")
   .then((jsonData) => {
     jsonData.forEach((item) => {
       const cardDiv = document.createElement("div");
-
+      const logo = document.createElement("img");
       const firstRow = document.createElement("div");
       const secondRow = document.createElement("div");
       const thirdRow = document.createElement("div");
       const grayLine = document.createElement("div");
       const gridRow = document.createElement("div");
+
+      logo.setAttribute("src", item.logo);
+      logo.setAttribute("alt", item.company);
+
       firstRow.classList.add("first-row");
       secondRow.classList.add("second-row");
       thirdRow.classList.add("third-row");
@@ -52,18 +91,20 @@ fetch("./data.json")
       contractData(item.location);
 
       const createTag = (innerText) => {
+        const div = document.createElement("div");
         const tag = document.createElement("span");
+        div.appendChild(tag);
         tag.innerText = innerText;
         tag.addEventListener("click", triggerModal);
-        gridRow.appendChild(tag);
+        gridRow.appendChild(div);
       };
 
       if (item.new && item.featured) {
-        cardDiv.classList.add("card");
+        cardDiv.classList.add("card", "job");
       } else if (item.new && !item.featured) {
-        cardDiv.classList.add("card-only-new");
+        cardDiv.classList.add("card-only-new", "job");
       } else {
-        cardDiv.classList.add("card-not-featured");
+        cardDiv.classList.add("card-not-featured", "job");
       }
 
       const strong = document.createElement("strong");
@@ -79,21 +120,24 @@ fetch("./data.json")
         i++
       ) {
         if (item.languages[i]) {
-          cardDiv.classList.add(`language-${item.languages[i]}`);
+          cardDiv.classList.add(`filter-${item.languages[i]}`);
           createTag(item.languages[i]);
         }
         if (item.tools[i]) {
-          cardDiv.classList.add(`tool-${item.tools[i]}`);
+          cardDiv.classList.add(`filter-${item.tools[i]}`);
           createTag(item.tools[i]);
         }
       }
 
+      cardDiv.appendChild(logo);
       cardDiv.appendChild(firstRow);
       cardDiv.appendChild(secondRow);
       cardDiv.appendChild(thirdRow);
       cardDiv.appendChild(grayLine);
+      cardDiv.appendChild(document.createElement("div"));
       cardDiv.appendChild(gridRow);
+      cardDiv.appendChild(document.createElement("div"));
 
-      $cards.appendChild(cardDiv);
+      cards.appendChild(cardDiv);
     });
   });
